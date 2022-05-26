@@ -147,7 +147,7 @@ class _MainBodyState extends State<MainBody> {
                       SizedBox(width: 10,),
                       SecText(text: " ")
                     ],
-                  ),
+                  ), 
                   SizedBox(height: Dimension.height5),
                  /* Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
