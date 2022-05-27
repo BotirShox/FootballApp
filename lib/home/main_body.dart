@@ -30,7 +30,6 @@ class _MainBodyState extends State<MainBody> {
       });
     });
   }
-
   @override
   void dispose(){
     pageController.dispose();
@@ -40,6 +39,7 @@ class _MainBodyState extends State<MainBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // SWIP section
         Container(
           // color: Colors.white,
           height: Dimension.pageView,
@@ -59,7 +59,68 @@ class _MainBodyState extends State<MainBody> {
               activeSize: const Size(18.0, 9.0),
               activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimension.radius1))
             ),
-        )
+        ),
+        SizedBox(height: Dimension.height5),
+        Container(
+          margin: EdgeInsets.only(left: Dimension.width1,),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TextFont(text: "League"),
+            SizedBox(width: Dimension.width4,),
+          ],
+        ),
+        ),
+        // LIST
+        Container(
+          height: 900,
+          child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+              itemCount: 20,
+              itemBuilder: (context, index){
+                return Container(
+                  margin: EdgeInsets.only(left: Dimension.width3, right: Dimension.width3, bottom: Dimension.height5),
+                  child: Row(
+                    children: [
+                      // LOGO section
+                      Expanded(
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Dimension.radius2),
+                            color: Colors.black12,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                                image: AssetImage(
+                                    "assets/image/2.png"
+                                )
+                            )
+                        ),
+                      ),
+                      ),
+                      Expanded(
+                        child: Container(
+                        height: 20,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(Dimension.radius1),
+                            topRight: Radius.circular(Dimension.radius1)
+                          ),
+                          color: Colors.pink,
+                        ),
+                      ),
+                    )
+                    ],
+                  ),
+                );
+
+              }),
+        ),
+
+
       ],
     );
   }
@@ -147,7 +208,7 @@ class _MainBodyState extends State<MainBody> {
                       SizedBox(width: 10,),
                       SecText(text: " ")
                     ],
-                  ), 
+                  ),
                   SizedBox(height: Dimension.height5),
                  /* Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

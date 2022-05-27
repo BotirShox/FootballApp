@@ -4,6 +4,8 @@ import 'package:untitled1/home/main_body.dart';
 import 'package:untitled1/widgets/sec_text.dart';
 import 'package:untitled1/widgets/text_font.dart';
 
+import '../utils/dimension.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -20,10 +22,9 @@ class _MainPageState extends State<MainPage> {
         children: [
           //Haeder page
           Container(
-
             child: Container(
-              margin: EdgeInsets.only(top: 30, bottom: 10),
-              padding: EdgeInsets.only(left: 15, right: 15),
+              margin: EdgeInsets.only(top: Dimension.height10, bottom: Dimension.height5),
+              padding: EdgeInsets.only(left: Dimension.height5, right: Dimension.height10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -40,11 +41,11 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Center(
                     child: Container(
-                    width: 45,
-                    height: 45,
-                    child: Icon(Icons.search, color: Colors.white54),
+                    width: Dimension.width4,
+                    height: Dimension.width4,
+                    child: Icon(Icons.search, color: Colors.white54, size: 20,),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(Dimension.radius1),
                       color: Colors.black54,
                     ),
                   ) ,
@@ -54,7 +55,9 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           //Body page
-          MainBody(),
+          Expanded(child: SingleChildScrollView(
+            child: MainBody(),
+          )),
         ],
       ),
     );
