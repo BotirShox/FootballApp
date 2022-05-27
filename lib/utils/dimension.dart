@@ -23,4 +23,6 @@ static double width4 = screenHeight/19.2;
 static double radius1 = screenHeight/49.2;
 static double radius2 = screenHeight/25.2;
 
+static double font2 = screenHeight/32.46;
+
 }

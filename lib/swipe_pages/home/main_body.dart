@@ -3,11 +3,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/widgets/column.dart';
 import 'package:untitled1/widgets/reusible.dart';
 import 'package:untitled1/widgets/sec_text.dart';
 import 'package:untitled1/widgets/text_font.dart';
 
-import '../utils/dimension.dart';
+import '../../utils/dimension.dart';
 
 class MainBody extends StatefulWidget {
   const MainBody({Key? key}) : super(key: key);
@@ -191,43 +192,7 @@ class _MainBodyState extends State<MainBody> {
           ),
             child: Container(
               padding: EdgeInsets.only(top: Dimension.padding1, left: Dimension.width3, right: Dimension.width3, bottom: Dimension.padding1),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextFont(text: "Barslays"),
-                  SizedBox(height: Dimension.height10),
-                  Row(
-                    children: [
-                      Wrap(
-                        children: List.generate(5, (index) => Icon(Icons.star, color: Colors.pink, size: 15,)),
-                      ),
-                      SizedBox(width: 10,),
-                      SecText(text: " "),
-                      SizedBox(width: 10,),
-                      SecText(text: " "),
-                      SizedBox(width: 10,),
-                      SecText(text: " ")
-                    ],
-                  ),
-                  SizedBox(height: Dimension.height5),
-                 /* Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconTextWidget(icon: Icons.circle,
-                          iconColor: Colors.teal,
-                          text: "Normal"),
-
-                      IconTextWidget(icon: Icons.location_on,
-                          iconColor: Colors.pink,
-                          text: "1.4 km"),
-
-                      IconTextWidget(icon: Icons.access_time_rounded,
-                          iconColor: Colors.black,
-                          text: "1 h")
-                    ],
-                  ) */
-                ],
-              ),
+              child: AppColumn(text: "Barslays",),
             ),
         ),
         )],
