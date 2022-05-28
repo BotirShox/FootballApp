@@ -1,18 +1,24 @@
 import 'package:get/get.dart';
 import 'package:untitled1/data/repository/repos.dart';
+import 'package:untitled1/models/product.dart';
 
 class Control extends GetxController{
   final Repo repo;
   Control({required this.repo});
 
-  List<dynamic> _list1 = [];
-  List<dynamic> get list1 => _list1;
+  List<Products> _list1 = [];
+  List<Products> get ListA => _list1;
 
-  Future<void> getlist1() async{
+  bool _loIc = false;
+  bool get loIc => _loIc;
+
+  Future<void> getListA() async{
    Response response = await repo.getRepo();
    if (response.statusCode == 200) {
      _list1 = [];
-  //   _list1.addAll();
+    _list1.addAll(Product.fromJson(response.body).products);
+    print(_list1);
+     _loIc = true;
      update();
    }else{
 

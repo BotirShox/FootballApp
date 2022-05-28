@@ -3,9 +3,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/models/product.dart';
+import 'package:untitled1/utils/constants.dart';
+
 import 'package:untitled1/widgets/column.dart';
-import 'package:untitled1/widgets/reusible.dart';
-import 'package:untitled1/widgets/sec_text.dart';
 import 'package:untitled1/widgets/text_font.dart';
 
 import '../../utils/dimension.dart';
@@ -40,7 +41,6 @@ class _MainBodyState extends State<MainBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // SWIP section
         Container(
           // color: Colors.white,
           height: Dimension.pageView,
@@ -51,16 +51,16 @@ class _MainBodyState extends State<MainBody> {
                 return _buildPageItem(position);
               }),
         ),
-        new DotsIndicator(
-            dotsCount:10,
+          new DotsIndicator(
+            dotsCount: 6,
             position:_currentPageValue,
             decorator:DotsDecorator(
-              activeColor: Colors.teal,
-              size: const Size.square(9.0),
-              activeSize: const Size(18.0, 9.0),
-              activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimension.radius1))
+                activeColor: Colors.teal,
+                size: const Size.square(9.0),
+                activeSize: const Size(18.0, 9.0),
+                activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimension.radius1))
             ),
-        ),
+          ),
         SizedBox(height: Dimension.height5),
         Container(
           margin: EdgeInsets.only(left: Dimension.width1,),
@@ -120,8 +120,6 @@ class _MainBodyState extends State<MainBody> {
 
               }),
         ),
-
-
       ],
     );
   }
@@ -161,7 +159,8 @@ class _MainBodyState extends State<MainBody> {
               color: index.isEven?Color(0xFF69c5df):Color(0xFF9294cc),
               image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("assets/image/3.png"
+                  image: AssetImage(
+                      "assets/image/3.png"
                   )
               )
           ),
@@ -191,8 +190,8 @@ class _MainBodyState extends State<MainBody> {
             ]
           ),
             child: Container(
-              padding: EdgeInsets.only(top: Dimension.padding1, left: Dimension.width3, right: Dimension.width3, bottom: Dimension.padding1),
-              child: AppColumn(text: "Barslays",),
+              padding: EdgeInsets.only(top: Dimension.padding1, left: Dimension.width3, right: Dimension.width1, bottom: Dimension.padding1),
+              child: AppColumn(text: " "),
             ),
         ),
         )],

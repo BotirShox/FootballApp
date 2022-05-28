@@ -1,6 +1,6 @@
-import 'dart:html';
 
 import 'package:get/get.dart';
+import 'package:untitled1/utils/constants.dart';
 
 class ApiClient extends GetConnect implements GetxService{
   late String token;
@@ -9,7 +9,8 @@ class ApiClient extends GetConnect implements GetxService{
   ApiClient({required this.appUrl}){
     baseUrl = appUrl;
     timeout = Duration(seconds: 20);
-    _mainHeader = {'Content-type':'applocation/json; charset = UTF-8', 'Authorize':'Bearer $token',
+    token = AppConst.TOKEN;
+    _mainHeader = {'Content-type':'application/json; charset = UTF-8', 'Authorization':'Bearer $token',
     };
   }
   Future<Response> getData(String uri,) async {
@@ -17,7 +18,9 @@ class ApiClient extends GetConnect implements GetxService{
       Response response = await get(uri);
       return response;
     }catch(e){
+
       return Response(statusCode: 1, statusText: e.toString());
+
     }
   }
 }
