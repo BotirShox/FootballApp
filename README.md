@@ -1,10 +1,13 @@
-# untitled1
+# FootbalApp
 
 A new Flutter project.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+
+My second project in Flutter cross-platform to be able to publish the released app on both App Markets 
+(Google Play & App Store)
 
 A few resources to get you started if this is your first Flutter project:
 
